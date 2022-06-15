@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Created my first Electron App! :)</h1>
+
+    <script>
+      const { ipcRenderer, ipcMain } = require('electron')
+
+      ipcRenderer.on('pid-messaget', 'kjfd');
+
+      ipcRenderer.send('toMain', 'flksdlfk')
+
+      ipcMain.on('phpConsole',function(event,data){
+        console.log('dataphp', 'fsdfsd')
+      })
+
+    </script>
+  </body>
+</html>

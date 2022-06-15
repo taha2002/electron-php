@@ -1,0 +1,39 @@
+{
+  "name": "phpelectron",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "buildd": "electron-builder",
+    "build": "electron-packager . osssole --platform=win32 --arch=x64 --asar"
+  },
+  "build": {
+    "appId": "electron.php",
+    "files": [
+      "**/*"
+    ],
+    "extraFiles": [
+      {
+        "from": "php",
+        "to": "php",
+        "filter": [
+          "**/*"
+        ]
+      },
+      {
+        "from": "htdocs",
+        "to": "htdocs",
+        "filter": [
+          "**/*"
+        ]
+      }
+    ]
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^16.0.7",
+    "electron-builder": "^22.14.13",
+    "electron-packager": "^15.4.0"
+  }
+}
